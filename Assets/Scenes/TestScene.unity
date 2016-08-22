@@ -2218,6 +2218,14 @@ Prefab:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1045210796}
+    - target: {fileID: 1000013403373482, guid: 7216c5385c42f644dba3f2aed4b3da39, type: 2}
+      propertyPath: m_Name
+      value: eyeCenter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010965733194, guid: 7216c5385c42f644dba3f2aed4b3da39, type: 2}
+      propertyPath: m_Name
+      value: eyeCenter
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
