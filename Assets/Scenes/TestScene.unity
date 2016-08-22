@@ -1282,6 +1282,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010337699708, guid: 063c8e1672c7a5448a0db2b7cbdf7cb4, type: 2}
+      propertyPath: m_Name
+      value: Stone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 063c8e1672c7a5448a0db2b7cbdf7cb4, type: 2}
   m_IsPrefabParent: 0
@@ -2215,7 +2219,9 @@ Prefab:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1045210796}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114000012684833396, guid: 7216c5385c42f644dba3f2aed4b3da39, type: 2}
+    - {fileID: 54000013462852234, guid: 7216c5385c42f644dba3f2aed4b3da39, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7216c5385c42f644dba3f2aed4b3da39, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1405649793
