@@ -1,0 +1,38 @@
+# =============== 
+# Unity generated
+# ===============
+[Tt]emp/
+[Ll]ibrary/
+
+# =====================================
+# Visual Studio / MonoDevelop generated
+# =====================================
+[Ee]xportedObj/
+[Oo]bj/
+[Bb]in/
+**/*.svd
+**/*.userprefs
+**/*.csproj
+**/*.pidb
+**/*.pidb.meta
+**/*.suo
+**/*.sln
+**/*.user
+**/*.unityproj
+**/*.booproj
+**/sysinfo.txt
+
+#============
+#OS generated
+#============
+**/.DS_Store
+**/.DS_Store?
+**/._*
+**/.Spotlight-V100
+**/.Trashes
+**/ehthumbs.db
+**/Thumbs.db
+
+**/*.zip
+**/*.7z
+**/*.rar
