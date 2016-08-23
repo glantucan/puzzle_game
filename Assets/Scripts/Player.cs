@@ -107,7 +107,8 @@ public class Player : MonoBehaviour {
 	        } 
 		} else {
 			// Player is falling -> no friction.
-			this.rb.drag = 0;
+//			this.rb.velocity *= 0.5F; 
+//			this.rb.drag = 0;
 		}
 
 
@@ -280,6 +281,9 @@ public class Player : MonoBehaviour {
 			groundContacts.Remove(otherCol);
 			if (groundContacts.Count == 0) {
 				isGrounded = false;
+
+				this.rb.velocity *= 0.4F; 
+				this.rb.drag = 0;
 				//print("Should fall");
 			}
 		}
