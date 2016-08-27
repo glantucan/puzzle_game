@@ -7,12 +7,19 @@ public class Player : MonoBehaviour {
 	[SerializeField] private float moveVel = 10F;
 	private Rigidbody rb;
 
+	// Switches properties
+	private bool isNearSwitch;
+	private GameObject nearestButton;
+
 	/// <summary>
 	/// Initialization function. Executes just once when the GameObject is created at runtime.
 	/// </summary>
 	void Start () {
 		// Initialize the rigidbody rb property
 		this.rb = this.GetComponent<Rigidbody>();
+
+		// Not near a switch initially.
+		this.isNearSwitch = false;
 	}
 
 	void Update () {
@@ -27,5 +34,33 @@ public class Player : MonoBehaviour {
 			// when there is input, so we do not interfere with the Physics engine
 			this.rb.velocity = direction.normalized * moveVel;
 		}
+
+
+		// SWITCH BUTTONS
+		if (isNearSwitch) {
+			if (Input.GetKeyUp(KeyCode.Space)) {
+				Debug.Log("Player activated a switch: " + nearestButton.name);
+			}	
+		}
 	}
+
+	void OnTriggerEnter(Collider other) {
+		GameObject otherGO = other.gameObject;
+		if (otherGO.CompareTag("Switch")) {
+			Debug.Log("Player entered the trigger");
+			isNearSwitch = true;
+			nearestButton = otherGO;
+		}
+	}
+
+	void OnTriggerExit(Collider other) {
+		GameObject otherGO = other.gameObject;
+		if (otherGO.CompareTag("Switch")) {
+			Debug.Log("Player went out of the trigger");
+			isNearSwitch = false;
+			nearestButton = null;
+		}
+	}
+
+
 }

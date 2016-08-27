@@ -766,8 +766,12 @@ Prefab:
       propertyPath: m_Name
       value: RampSwitch
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 65000013089646142, guid: 20175aaf208c3f147b2461ebefd65a17, type: 2}
+    - target: {fileID: 65000013863505810, guid: 20175aaf208c3f147b2461ebefd65a17,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20175aaf208c3f147b2461ebefd65a17, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &500695638
@@ -2189,11 +2193,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013995433164, guid: 7216c5385c42f644dba3f2aed4b3da39, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4000013995433164, guid: 7216c5385c42f644dba3f2aed4b3da39, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4000013995433164, guid: 7216c5385c42f644dba3f2aed4b3da39, type: 2}
       propertyPath: m_LocalRotation.x
