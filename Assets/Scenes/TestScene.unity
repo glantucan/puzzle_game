@@ -90,27 +90,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &24354224 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000012986528272, guid: 797aaec1e927d7b42a07b07647448eb6,
-    type: 2}
-  m_PrefabInternal: {fileID: 169497442}
---- !u!111 &24354229
-Animation:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 24354224}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: 4c38f5df1a597d9449612d4f7568c0cc, type: 2}
-  - {fileID: 7400000, guid: a4cb65430caa9cd449a0dabd8607b7c1, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &126008577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,28 +1555,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20175aaf208c3f147b2461ebefd65a17, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &904694204 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000011194519216, guid: b051fba1d7b15594894bd03ea9ccdb90,
-    type: 2}
-  m_PrefabInternal: {fileID: 2091890322}
---- !u!95 &904694205
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 904694204}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 89f183e885f6f23408123b990ef6d15b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &936065324
 GameObject:
   m_ObjectHideFlags: 0
