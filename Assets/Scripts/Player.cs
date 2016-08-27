@@ -25,7 +25,7 @@ public class Player : MonoBehaviour {
 		if (direction != Vector3.zero) {
 			// Note that we use the rigidbody to move the player, and only 
 			// when there is input, so we do not interfere with the Physics engine
-			this.rb.velocity = direction.normalized * moveVel + this.rb.velocity.y*Vector3.up;
+			this.rb.velocity = direction.normalized * moveVel;
 		}
 	}
 }
