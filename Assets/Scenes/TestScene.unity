@@ -843,7 +843,8 @@ Prefab:
       propertyPath: m_Name
       value: RampSwitch
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65000013089646142, guid: 20175aaf208c3f147b2461ebefd65a17, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 20175aaf208c3f147b2461ebefd65a17, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &407030902 stripped
