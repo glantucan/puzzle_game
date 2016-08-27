@@ -12,8 +12,8 @@ public class Player1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float xInput = Input.GetAxisRaw("Horizontal");
-		float zInput = Input.GetAxisRaw("Vertical");
+		float xInput = Input.GetAxis("Horizontal");
+		float zInput = Input.GetAxis("Vertical");
 		Vector3 direction = zInput * Vector3.forward + xInput * Vector3.right;   
 		                             
   		this.transform.position += direction * moveVel * Time.deltaTime;
