@@ -10,6 +10,8 @@ public class Player : MonoBehaviour {
 	// Switches properties
 	private bool isNearSwitch;
 	private GameObject nearestButton;
+	private bool isRampOn;
+	private bool isBridgeOn;
 
 	/// <summary>
 	/// Initialization function. Executes just once when the GameObject is created at runtime.
@@ -39,7 +41,27 @@ public class Player : MonoBehaviour {
 		// SWITCH BUTTONS
 		if (isNearSwitch) {
 			if (Input.GetKeyUp(KeyCode.Space)) {
+				Transform buttonLight = nearestButton.transform.Find("ButtonLight");
+				Transform glimmerLight = nearestButton.transform.Find("GlimmerLight");
+				buttonLight.gameObject.SetActive(!buttonLight.gameObject.activeSelf);
+				glimmerLight.gameObject.SetActive(!glimmerLight.gameObject.activeSelf);
+
 				Debug.Log("Player activated a switch: " + nearestButton.name);
+				if (nearestButton.name == "RampSwitch") {
+					
+				} else if (nearestButton.name == "BridgeSwitch") {
+					if (isBridgeOn) {
+						GameObject bridge = GameObject.Find("BridgeAnimation");
+						Animation bridgeAnimation = bridge.GetComponent<Animation>();
+						bridgeAnimation.Play("BridgeOut");
+						isBridgeOn = false;
+					} else {
+						GameObject bridge = GameObject.Find("BridgeAnimation");
+						Animation bridgeAnimation = bridge.GetComponent<Animation>();
+						bridgeAnimation.Play("BridgeIn");
+						isBridgeOn = true;
+					}
+				}
 			}	
 		}
 	}
