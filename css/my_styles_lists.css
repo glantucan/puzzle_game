@@ -1,0 +1,50 @@
+
+.reveal ul, .reveal ol {
+    display:block;
+    margin-left: 70px;
+    margin-right: 25px;
+    text-align: left;
+}
+
+.reveal ul ul, .reveal ol ol,
+.reveal ol ul, .reveal ul ol{
+    margin-right: 10px;
+}
+
+.reveal li {
+    margin-left: 10px;
+    margin-right: 0px;
+    text-align: left;
+    margin-bottom: 0.3em;
+    padding-left: 0em;
+    text-indent: 0em;
+}
+.reveal li li {
+    margin-left: -15px;
+}
+
+.reveal li.arrow {
+    list-style-type:none;
+    padding-left: 1em;
+    text-indent: -2.26em;
+}
+
+.reveal li.arrow:before {
+    content: "→";
+}
+
+
+.reveal li.arrow.no-margin {
+    margin-left: -10px;
+}
+
+.reveal li li:first-child {
+    margin-top: 0.2em;
+
+}
+
+.reveal li p {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+}
