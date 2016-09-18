@@ -1,0 +1,17 @@
+
+.reveal code:not(.hljs) {
+    font-family: 'Ubuntu Mono', monospace;
+    font-weight: 400 !important;
+    font-size:95%;
+    color: yellowgreen;
+}
+
+
+.reveal code.hljs {
+    font-family: 'Ubuntu Mono', monospace;
+    font-size:120%;
+    line-height: 130%;
+    max-height: 550px;
+    word-wrap: normal;
+}
+}

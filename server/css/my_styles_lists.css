@@ -48,3 +48,9 @@
     margin-right: 0;
     text-align: left;
 }
+
+
+.reveal li.no-bullet {
+    list-style-type:none;
+    margin-left: -30px;
+}

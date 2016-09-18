@@ -1,5 +1,3 @@
-<!-- To strip comments out go here: http://jsfiddle.net/glantucan/ojbdtkbs/ -->
-
 
 #### <!-- .element: class="title" --> Tema 0
 # <!-- .element: class="title" --> Repaso y refuerzo de programación en C# con Unity
@@ -292,11 +290,12 @@ public class Player : MonoBehaviour {
 <!-- .element: class="head-right" -->
 
 
-## <!-- .element: class="span2" --> Dos formas de mover un GameObject (Con velocidad constante) <br><br>
+## <!-- .element: class="span2" --> Dos formas de mover un GameObject (Con velocidad constante) <br>
+<!-- .element: class="span2" --> <button class="warning">WARNING!</button> A partir de ahora necesitas entender como operar con vectores.
 
 #### A través del componente **Transform**
 ```cs
-public float speed = 10F;
+public float speed;
 
 void Update() {
 	Vector3 direction = Vector3.forward; // Por ej. 
@@ -308,7 +307,7 @@ void Update() {
 
 #### A través del componente **Rigidbody**
 ```cs
-public float moveVel = 10F;
+public float speed;
 private Rigidbody rb;
 
 void Start () {
@@ -317,9 +316,47 @@ void Start () {
 
 void Update () {
 	Vector3 direction = Vector3.forward;
-	this.rb.velocity = direction * moveVel;
+	this.rb.velocity = direction * speed;
 }
 ```
 <!-- .element: class="span2" --> El vector `direction` debe tener longitud 1 para que `moveVel` actúe como esperamos.
 
 <!-- .element: class="span2" --> Podemos utilizar `direction.normalized` en lugar de `direction` si no lo es.
+
+
+Note: 
+* Stop here and show some examples. Make them do some exercises before going further.
+
+
+
+----
+
+
+
+### Tema 0: Repaso
+<!-- .element: class="head-left" -->
+### 0.5.- User Input I
+<!-- .element: class="head-right" -->
+
+## Control del movimiento por parte del usuario
+
+
+
+La clase `Input` nos da la info de input de usuario (teclado, ratón, controlador consola, ...).
+* <!-- .element class="no-bullet" --> ¿Dónde se configura? En el panel *InputManager*:
+* <!-- .element class="arrow" --> *Edit* 
+	* <!-- .element class="arrow" --> *Project Settings*
+	 	* <!-- .element class="arrow" --> *Input*
+* <!-- .element class="no-bullet" --> Los ejes llamados `Horizontal` y `Vertical` son los estándar de movimiento en cualquier juego y son los que usaremos.
+* <!-- .element class="no-bullet" --> Por defecto vienen configurados para <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> y 
+<kbd>⇦</kbd> <kbd>⇧</kbd> <kbd>⇩</kbd> <kbd>⇨</kbd>
+<br><br>
+* <!-- .element class="no-bullet" --> Desde nuestro código:
+	* `Input.GetAxisRaw("Horizontal")`
+	 	* Nos da el valor del input según la tecla pulsada 
+			* <kbd>A</kbd> -> `-1` -> izquierda 
+			* <kbd>D</kbd> -> `1` -> derecha
+			* ninguna -> `0`
+	* `Input.GetAxis("Horizontal")` nos da el valor del input horizontal modificado por los valores de *Sensitivity* y *Gravity* del *InputManager*.
+
+

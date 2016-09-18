@@ -1,0 +1,24 @@
+
+.reveal .slides > section.cols2,
+.reveal .slides > section > section.cols2 {
+    column-count:2;
+    -moz-column-count: 2;
+}
+
+
+
+.reveal section.cols2 {
+    column-gap:5px;
+    -moz-column-gap: 5px;
+}
+
+.reveal section.cols2 .span2 {
+    /* Firefox doesn't support this yet */
+    -moz-column-span: all;
+    column-span: all;
+    text-align:center;
+    margin-left: -50px !important;
+    margin-right:0 !important;
+    padding-left: -20px  !important;
+    padding-right:0 !important;
+}

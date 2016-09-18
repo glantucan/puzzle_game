@@ -1,0 +1,94 @@
+
+.error {
+    font-family: 'Dosis', sans-serif;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a90329+0,8f0222+56,6d0019+100&0.01+25,0.63+96,0.8+100 */
+    background: radial-gradient(ellipse at center, rgba(169,3,41,1) 0%,rgba(157,3,38,1) 25%,rgba(143,2,34,0.84) 56%,rgba(112,0,26,0.63) 96%,rgba(109,0,25,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    display:inline-block;
+    position: absolute;
+    /*width:  100px;80px;*/
+    height:25px;
+    overflow: hidden;
+    left:150px;
+    z-index: 100;
+    border-radius: 4px;
+    border:outset rgba(95, 13, 8, 0.2) 2px;
+    color:yellow;
+    font-weight: 900;
+}
+
+.error:before {
+    display:inline-block;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    margin-top: -150px;
+    margin-left:-150px;
+    width: 300px;
+    height:300px;
+    background-image: url("imgs/caution_bg_repeat.png");
+    transform: rotate(30deg);
+    animation: stripes 9s linear infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    opacity:0.3;
+}
+
+.warning {
+    font-family: 'Dosis', sans-serif;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a90329+0,8f0222+56,6d0019+100&0.01+25,0.63+96,0.8+100 */
+    background: radial-gradient(ellipse at center, rgb(169, 102, 0) 0%, rgb(157, 87, 0) 25%, rgba(143, 60, 0, 0.84) 56%, rgba(112, 60, 0, 0.63) 96%,rgba(109,0,25,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    display:inline-block;
+    position: absolute;
+    /*width:  100px;80px;*/
+    height:25px;
+    overflow: hidden;
+    left:150px;
+    z-index: 100;
+    border-radius: 4px;
+    border:outset rgba(95, 56, 9, 0.2) 2px;
+    color: #fffb99;
+    font-weight: 900;
+}
+
+.warning:before {
+    display:inline-block;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    margin-top: -150px;
+    margin-left:-150px;
+    width: 300px;
+    height:300px;
+    background-image: url("imgs/warning_bg_repeat.png");
+    transform: rotate(30deg);
+    animation: stripes 9s linear infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    opacity:0.3;
+}
+
+
+@keyframes stripes {
+
+    100% {
+        transform: translateX(30%) rotate(30deg);
+    }
+}
+
+
+.reveal kbd {
+    background-color: #9f9f9f;
+    border:4px outset #8b8b8b;
+    border-radius:3px;
+    box-shadow:0 1px 0px rgba(0,0,0,0.2),0 0 4px 1px #bdbdbd inset;
+    color:#333;
+    display:inline-block;
+    font-weight: bold;
+    font-size: 14px;
+
+    line-height:1.4;
+    margin:0 0.1em;
+    padding:0.05em 0.4em;
+    text-shadow:0 1px 0 #ccc;
+    white-space:nowrap
+}
