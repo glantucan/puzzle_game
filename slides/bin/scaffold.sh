@@ -34,6 +34,8 @@ mkdir ../server/imgs
 cp -r ./imgs ../server/
 
 cp ./t00_index.html ../index.html
+mkdir ../css
+mv ../client/css/index_styles.css ../css/
 
 # Create a printable copy of the slides.
 #	Will have to print throug the gihub page removing some parts using the chrome debugger, but this will do for now
