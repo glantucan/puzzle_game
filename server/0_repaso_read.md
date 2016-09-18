@@ -1,8 +1,8 @@
-<!-- To strip comments out go here: http://jsfiddle.net/glantucan/ojbdtkbs/ -->
 
 
-#### <!-- .element: class="title" --> Tema 0
-# <!-- .element: class="title" --> Repaso y refuerzo de programación en C# con Unity
+
+####  Tema 0
+#  Repaso y refuerzo de programación en C# con Unity
 
 
 
@@ -10,36 +10,36 @@
 
 
 ### Tema 0: Repaso
-<!-- .element: class="head-left" -->
+
 ### 0.0.- Mecánicas de juego. 
-<!-- .element: class="head-right" -->
+
 
 ## Un paseo por las mecánicas del juego
 
-  * <!-- .element: class="fragment" --> Movimiento del player.
-  * <!-- .element: class="fragment" --> Caida (no hay salto).
-  * <!-- .element: class="fragment" --> Switches (interruptores) y sus acciones.
-  * <!-- .element: class="fragment" --> Inventario (De momento sólo coge piedras).
-  * <!-- .element: class="fragment" --> Cámara (seguimiento y rotación).
-  * <!-- .element: class="fragment" --> Fin de nivel.
+  *  Movimiento del player.
+  *  Caida (no hay salto).
+  *  Switches (interruptores) y sus acciones.
+  *  Inventario (De momento sólo coge piedras).
+  *  Cámara (seguimiento y rotación).
+  *  Fin de nivel.
   
 
 ----
 
 
 ### Tema 0: Repaso
-<!-- .element: class="head-left" -->
+
 ### 0.1.-Preparar el proyecto
-<!-- .element: class="head-right" -->
+
 
 ## Organización del proyecto
  
 Podéis descargar el proyecto inicial [aquí](https://github.com/glantucan/puzzle_game/archive/00_BareProject.zip).
 
-* <!-- .element: class="fragment" --> Colocación ventanas de Unity (y guardado). 
-* <!-- .element: class="fragment" --> Nombres de carpetas y archivos en `Assets`.  
-* <!-- .element: class="fragment" --> GameObjects anidados para organizar la jerarquía de escena
-* <!-- .element: class="fragment" --> Configuración para trabajar con MonoDevelop.
+*  Colocación ventanas de Unity (y guardado). 
+*  Nombres de carpetas y archivos en `Assets`.  
+*  GameObjects anidados para organizar la jerarquía de escena
+*  Configuración para trabajar con MonoDevelop.
   * Descarga [este archivo](https://drive.google.com/open?id=0B97mmF9E10p3SUVCQm9yXy03YXM).
   * Descomprímelo en una carpeta temporal.
   * Copia las carpetas que hay dentro a  
@@ -51,42 +51,42 @@ Borra lo que haya dentro de esa carpeta previamente.
 
 
 ### Tema 0: Repaso
-<!-- .element: class="head-left" -->
+
 ### 0.2.- GameObjects y Componentes
-<!-- .element: class="head-right" -->
+
 
 ## Recordatorio básico
-* <!-- .element: class="fragment" --> **GameObject**: Pieza básica para construir elementos de juego
-* <!-- .element: class="fragment" --> **Componente**: Configura el comportamiento y aspecto del GameObject.
-	* <!-- .element: class="fragment" --> Componente `Transfrom` (posición, rotación y escala)
-  	* <!-- .element: class="fragment" --> Otros componentes típicos  
+*  **GameObject**: Pieza básica para construir elementos de juego
+*  **Componente**: Configura el comportamiento y aspecto del GameObject.
+	*  Componente `Transfrom` (posición, rotación y escala)
+  	*  Otros componentes típicos  
 		* `MeshFilter` -> Definición de la malla (Vértices y aristas)
 		* `MeshRenderer` -> material: texturas, color, shaders...
 		* `Collider` -> *Solidez* del game object.
 		* `Rigidbody` -> Propiedades *físicas* del gameobject
 		* ...
-		* <!-- .element: class="fragment" --> Scripts (que heredan las propiedades de `MonoBehaviour`)  
+		*  Scripts (que heredan las propiedades de `MonoBehaviour`)  
 		Cuando no haya un componente prefabricado que haga lo que queremos, lo creamos nosotros en C#.  
 <br>  
 
-### <!-- .element: class="fragment" --> Nuestro juego tendrá inicialmente:
-* <!-- .element: class="fragment" --> Muchos gameobjects
-* <!-- .element: class="fragment" --> Unos cuantos componentes en cada gameobject &rArr; Muchísimos componentes
-* <!-- .element: class="fragment" --> Un sólo compnente de tipo Script (`Player.cs`)
+###  Nuestro juego tendrá inicialmente:
+*  Muchos gameobjects
+*  Unos cuantos componentes en cada gameobject &rArr; Muchísimos componentes
+*  Un sólo compnente de tipo Script (`Player.cs`)
 
 
 ----
 
 
 ### Tema 0: Repaso
-<!-- .element: class="head-left" -->
+
 ### 0.3.- Scripts y MonoBehaviour
-<!-- .element: class="head-right" -->
+
 
 ### Primero vamos a hacer las cosas mal. 
-#### &rArr; Para que entendáis por qué hay que hacerlas bien. <!-- .element: class="fragment" --> 
-* <!-- .element: class="fragment" --> Vamos a meter todas las mecánicas del juego en un sólo componente.  
-* <!-- .element: class="fragment" --> Acabaremos con un script de más de 300 líneas
+#### &rArr; Para que entendáis por qué hay que hacerlas bien.  
+*  Vamos a meter todas las mecánicas del juego en un sólo componente.  
+*  Acabaremos con un script de más de 300 líneas
   * Veremos que nos falta mucho por hacer para acabar el juego
   * Nos daremos cuenta de que es prácticamente imposible orientarse entre tanto código.
   * Hacer cambios en una mecánica afecta al código de las otras. Modificar un pequeño detalle desencadena cascadas de cambios que no acaban nunca.
@@ -98,15 +98,15 @@ Borra lo que haya dentro de esa carpeta previamente.
 ---
 
 
-<!-- .element: class="cols2" -->
+
 
 ### Tema 0: Repaso
-<!-- .element: class="head-left" -->
+
 ### 0.3.- Scripts y MonoBehaviour
-<!-- .element: class="head-right" -->
+
 
 ### Después haremos las cosas regular
-* <!-- .element: class="fragment arrow no-margin" --> 
+*  
 Para organizar nuestro código y nuestra cabeza 
 	* Separaremos cada pieza de las mecánicas en funciones diferentes.
 	* Cada función debe funcionar como una caja negra.
@@ -118,7 +118,7 @@ Para organizar nuestro código y nuestra cabeza
 
 
 ### Y después haremos las cosas bien 
-* <!-- .element: class="fragment arrow no-margin" -->  Divide y vencerás: 
+*   Divide y vencerás: 
 	* Cada pieza del juego va en un componente diferente.
 	* Cada pieza es lo más independiente de las otras que se pueda.
 		* Veremos que todo es mucho más claro y manejable
@@ -131,17 +131,17 @@ Para organizar nuestro código y nuestra cabeza
 
 
 ### Tema 0: Repaso
-<!-- .element: class="head-left" -->
+
 ### 0.3.- Scripts y MonoBehaviour
-<!-- .element: class="head-right" -->
+
 
 ### Creando el componente `Player`
 1. Crear un nuevo Script
-	* <!-- .element class="arrow" --> En la carpeta *Scripts* de nuestros *Assets* 
-		* <!-- .element class="arrow" --> Click con el botón derecho 
-			* <!-- .element class="arrow" --> *Create* 
-				* <!-- .element class="arrow" --> *C# Script*  
-					* <!-- .element class="arrow" --> Ponemos `Player` como nombre  
+	*  En la carpeta *Scripts* de nuestros *Assets* 
+		*  Click con el botón derecho 
+			*  *Create* 
+				*  *C# Script*  
+					*  Ponemos `Player` como nombre  
 					
 	El nombre de la clase coincide con el nombre del archivo.   
 	**Esto debe cumplirse siempre**.  
@@ -153,9 +153,9 @@ Para organizar nuestro código y nuestra cabeza
 
 
 ### Tema 0: Repaso
-<!-- .element: class="head-left" -->
+
 ### 0.3.- Scripts y MonoBehaviour
-<!-- .element: class="head-right" -->
+
 
 
 Para editar el Script tenemos varias opciones:
@@ -187,9 +187,9 @@ Los scripts que creamos derivan por defecto de [`MonoBehaviour`](https://docs.un
 
 
 ### Tema 0: Repaso
-<!-- .element: class="head-left" -->
+
 ### 0.3.- Scripts y MonoBehaviour
-<!-- .element: class="head-right" -->
+
 
 ## Funciones evento básicas
 
@@ -227,9 +227,9 @@ void Update () {
 
 
 ### Tema 0: Repaso
-<!-- .element: class="head-left" -->
+
 ### 0.3.- Scripts y MonoBehaviour
-<!-- .element: class="head-right" -->
+
 
 ## Otros elementos de nuestros scripts
 
@@ -284,15 +284,15 @@ public class Player : MonoBehaviour {
 
 
 
-<!-- .element: class="cols2" -->
+
 
 ### Tema 0: Repaso
-<!-- .element: class="head-left" -->
+
 ### 0.4.- Movimiento básico
-<!-- .element: class="head-right" -->
 
 
-## <!-- .element: class="span2" --> Dos formas de mover un GameObject (Con velocidad constante) <br><br>
+
+##  Dos formas de mover un GameObject (Con velocidad constante) <br><br>
 
 #### A través del componente **Transform**
 ```cs
@@ -320,6 +320,6 @@ void Update () {
 	this.rb.velocity = direction * moveVel;
 }
 ```
-<!-- .element: class="span2" --> El vector `direction` debe tener longitud 1 para que `moveVel` actúe como esperamos.
+ El vector `direction` debe tener longitud 1 para que `moveVel` actúe como esperamos.
 
-<!-- .element: class="span2" --> Podemos utilizar `direction.normalized` en lugar de `direction` si no lo es.
+ Podemos utilizar `direction.normalized` en lugar de `direction` si no lo es.
