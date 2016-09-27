@@ -1,6 +1,7 @@
 
 ####  DEIM
-#  Presentación
+###  Desarrollo de Entornos Interactivos Multidispositivo
+##  Presentación
 
 
 
@@ -12,14 +13,12 @@
 ### OBJETIVOS 
 
 
-## Un paseo por las mecánicas del juego
 
-  *  Movimiento del player.
-  *  Caida (no hay salto).
-  *  Switches (interruptores) y sus acciones.
-  *  Inventario (De momento sólo coge piedras).
-  *  Cámara (seguimiento y rotación).
-  *  Fin de nivel.
+###  Objetivo práctico (para todos).
+*  Que seáis capaces de prototipar juegos en Unity
+
+###  Objetivo más ambicioso (para los que os guste realmente el desarrollo).
+*  Aprender las bases de la programación orientada a objetos y del desarrollo de software en general.
   
 
 ----
