@@ -22,9 +22,13 @@ module.exports = function(grunt) {
 		},
 		
 		removeHtmlComments: {
-			target: {
-				src: '0_repaso.md',
-				dest: 'git_slides/Tema_0_Repaso.md'
+			presentacion: {
+				src: '00_presentacion.md',
+				dest: '../printableSlides/Tema_0_Presentacion.md'
+			},
+			tema01: {
+				src: '01_repaso.md',
+				dest: '../printableSlides/Tema_1_Repaso.md'
 			}
 		},
 

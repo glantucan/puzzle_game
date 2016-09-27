@@ -41,7 +41,8 @@
     "grunt-sass": "~1.1.0-beta",
     "grunt-zip": "~0.17.1",
     "load-grunt-tasks": "^3.5.2",
-    "node-sass": "~3.3.3"
+    "node-sass": "~3.3.3",
+    "remove-html-comments": "^1.0.2"
   },
   "license": "MIT"
 }

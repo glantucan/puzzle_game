@@ -38,9 +38,9 @@ mkdir ../css
 mv ../client/css/index_styles.css ../css/
 
 # Create a printable copy of the slides.
-#	Will have to print throug the gihub page removing some parts using the chrome debugger, but this will do for now
+#	Will have to print through the gihub page removing some parts using the chrome debugger, but this will do for now
 grunt remove_Html_Comments
-cp ./git_slides/*.md ../printableSlides/
+#cp ./git_slides/*.md ../printableSlides/
 
 # small mongoose server, just in case
 cp ./mongoose.* ../client/
