@@ -1,4 +1,20 @@
 body {
     font-family: 'Dosis', sans-serif;
     padding:10px 20%;
+    font-size: 20px;
+
+}
+
+a {
+    display:inline-block;
+    font-weight: 600;
+    color: #0062b4;
+
+    text-decoration: none;
+}
+
+a:hover {
+
+    background-color: #0062b4;
+    color: white;
 }

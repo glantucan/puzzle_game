@@ -1,5 +1,5 @@
 
-#### <!-- .element: class="title" --> Tema 0
+#### <!-- .element: class="title" --> Tema 1
 # <!-- .element: class="title" --> Repaso y refuerzo de programación en C# con Unity
 
 
@@ -7,9 +7,9 @@
 ----
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 <!-- .element: class="head-left" -->
-### 0.0.- Mecánicas de juego. 
+### 1.0.- Mecánicas de juego. 
 <!-- .element: class="head-right" -->
 
 ## Un paseo por las mecánicas del juego
@@ -25,9 +25,9 @@
 ----
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 <!-- .element: class="head-left" -->
-### 0.1.-Preparar el proyecto
+### 1.1.-Preparar el proyecto
 <!-- .element: class="head-right" -->
 
 ## Organización del proyecto
@@ -48,9 +48,9 @@ Borra lo que haya dentro de esa carpeta previamente.
 ----
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 <!-- .element: class="head-left" -->
-### 0.2.- GameObjects y Componentes
+### 1.2.- GameObjects y Componentes
 <!-- .element: class="head-right" -->
 
 ## Recordatorio básico
@@ -76,9 +76,9 @@ Borra lo que haya dentro de esa carpeta previamente.
 ----
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 <!-- .element: class="head-left" -->
-### 0.3.- Scripts y MonoBehaviour
+### 1.3.- Scripts y MonoBehaviour
 <!-- .element: class="head-right" -->
 
 ### Primero vamos a hacer las cosas mal. 
@@ -98,9 +98,9 @@ Borra lo que haya dentro de esa carpeta previamente.
 
 <!-- .element: class="cols2" -->
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 <!-- .element: class="head-left" -->
-### 0.3.- Scripts y MonoBehaviour
+### 1.3.- Scripts y MonoBehaviour
 <!-- .element: class="head-right" -->
 
 ### Después haremos las cosas regular
@@ -128,9 +128,9 @@ Para organizar nuestro código y nuestra cabeza
 ---
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 <!-- .element: class="head-left" -->
-### 0.3.- Scripts y MonoBehaviour
+### 1.3.- Scripts y MonoBehaviour
 <!-- .element: class="head-right" -->
 
 ### Creando el componente `Player`
@@ -150,9 +150,9 @@ Para organizar nuestro código y nuestra cabeza
 ---
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 <!-- .element: class="head-left" -->
-### 0.3.- Scripts y MonoBehaviour
+### 1.3.- Scripts y MonoBehaviour
 <!-- .element: class="head-right" -->
 
 
@@ -184,9 +184,9 @@ Los scripts que creamos derivan por defecto de [`MonoBehaviour`](https://docs.un
 ---
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 <!-- .element: class="head-left" -->
-### 0.3.- Scripts y MonoBehaviour
+### 1.3.- Scripts y MonoBehaviour
 <!-- .element: class="head-right" -->
 
 ## Funciones evento básicas
@@ -224,9 +224,9 @@ void Update () {
 
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 <!-- .element: class="head-left" -->
-### 0.3.- Scripts y MonoBehaviour
+### 1.3.- Scripts y MonoBehaviour
 <!-- .element: class="head-right" -->
 
 ## Otros elementos de nuestros scripts
@@ -284,15 +284,15 @@ public class Player : MonoBehaviour {
 
 <!-- .element: class="cols2" -->
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 <!-- .element: class="head-left" -->
-### 0.4.- Movimiento básico
+### 1.4.- Movimiento básico
 <!-- .element: class="head-right" -->
 
 
-## <!-- .element: class="span2" --> Dos formas de mover un GameObject (Con velocidad constante) <br>
-<!-- .element: class="span2" --> <button class="warning">WARNING!</button> A partir de ahora necesitas entender como operar con vectores.
-
+## <!-- .element: class="span2" --> Dos formas de mover un GameObject (Con velocidad constante) 
+<br>
+<!-- .element: class="span2" --> <button class="warning">WARNING!</button> A partir de ahora necesitas entender como operar con vectores. <br><br>
 #### A través del componente **Transform**
 ```cs
 public float speed;
@@ -333,9 +333,9 @@ Note:
 
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 <!-- .element: class="head-left" -->
-### 0.5.- User Input I
+### 1.5.- User Input I
 <!-- .element: class="head-right" -->
 
 ## Control del movimiento por parte del usuario

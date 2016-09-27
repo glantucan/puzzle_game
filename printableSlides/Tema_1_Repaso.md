@@ -1,7 +1,5 @@
 
-
-
-####  Tema 0
+####  Tema 1
 #  Repaso y refuerzo de programación en C# con Unity
 
 
@@ -9,9 +7,9 @@
 ----
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 
-### 0.0.- Mecánicas de juego. 
+### 1.0.- Mecánicas de juego. 
 
 
 ## Un paseo por las mecánicas del juego
@@ -27,9 +25,9 @@
 ----
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 
-### 0.1.-Preparar el proyecto
+### 1.1.-Preparar el proyecto
 
 
 ## Organización del proyecto
@@ -50,9 +48,9 @@ Borra lo que haya dentro de esa carpeta previamente.
 ----
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 
-### 0.2.- GameObjects y Componentes
+### 1.2.- GameObjects y Componentes
 
 
 ## Recordatorio básico
@@ -78,9 +76,9 @@ Borra lo que haya dentro de esa carpeta previamente.
 ----
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 
-### 0.3.- Scripts y MonoBehaviour
+### 1.3.- Scripts y MonoBehaviour
 
 
 ### Primero vamos a hacer las cosas mal. 
@@ -100,9 +98,9 @@ Borra lo que haya dentro de esa carpeta previamente.
 
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 
-### 0.3.- Scripts y MonoBehaviour
+### 1.3.- Scripts y MonoBehaviour
 
 
 ### Después haremos las cosas regular
@@ -130,9 +128,9 @@ Para organizar nuestro código y nuestra cabeza
 ---
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 
-### 0.3.- Scripts y MonoBehaviour
+### 1.3.- Scripts y MonoBehaviour
 
 
 ### Creando el componente `Player`
@@ -152,9 +150,9 @@ Para organizar nuestro código y nuestra cabeza
 ---
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 
-### 0.3.- Scripts y MonoBehaviour
+### 1.3.- Scripts y MonoBehaviour
 
 
 
@@ -186,9 +184,9 @@ Los scripts que creamos derivan por defecto de [`MonoBehaviour`](https://docs.un
 ---
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 
-### 0.3.- Scripts y MonoBehaviour
+### 1.3.- Scripts y MonoBehaviour
 
 
 ## Funciones evento básicas
@@ -226,9 +224,9 @@ void Update () {
 
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 
-### 0.3.- Scripts y MonoBehaviour
+### 1.3.- Scripts y MonoBehaviour
 
 
 ## Otros elementos de nuestros scripts
@@ -286,17 +284,18 @@ public class Player : MonoBehaviour {
 
 
 
-### Tema 0: Repaso
+### Tema 1: Repaso
 
-### 0.4.- Movimiento básico
+### 1.4.- Movimiento básico
 
 
 
-##  Dos formas de mover un GameObject (Con velocidad constante) <br><br>
-
+##  Dos formas de mover un GameObject (Con velocidad constante) 
+<br>
+ <button class="warning">WARNING!</button> A partir de ahora necesitas entender como operar con vectores. <br><br>
 #### A través del componente **Transform**
 ```cs
-public float speed = 10F;
+public float speed;
 
 void Update() {
 	Vector3 direction = Vector3.forward; // Por ej. 
@@ -308,7 +307,7 @@ void Update() {
 
 #### A través del componente **Rigidbody**
 ```cs
-public float moveVel = 10F;
+public float speed;
 private Rigidbody rb;
 
 void Start () {
@@ -317,9 +316,47 @@ void Start () {
 
 void Update () {
 	Vector3 direction = Vector3.forward;
-	this.rb.velocity = direction * moveVel;
+	this.rb.velocity = direction * speed;
 }
 ```
  El vector `direction` debe tener longitud 1 para que `moveVel` actúe como esperamos.
 
  Podemos utilizar `direction.normalized` en lugar de `direction` si no lo es.
+
+
+Note: 
+* Stop here and show some examples. Make them do some exercises before going further.
+
+
+
+----
+
+
+
+### Tema 1: Repaso
+
+### 1.5.- User Input I
+
+
+## Control del movimiento por parte del usuario
+
+
+
+La clase `Input` nos da la info de input de usuario (teclado, ratón, controlador consola, ...).
+*  ¿Dónde se configura? En el panel *InputManager*:
+*  *Edit* 
+	*  *Project Settings*
+	 	*  *Input*
+*  Los ejes llamados `Horizontal` y `Vertical` son los estándar de movimiento en cualquier juego y son los que usaremos.
+*  Por defecto vienen configurados para <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> y 
+<kbd>⇦</kbd> <kbd>⇧</kbd> <kbd>⇩</kbd> <kbd>⇨</kbd>
+<br><br>
+*  Desde nuestro código:
+	* `Input.GetAxisRaw("Horizontal")`
+	 	* Nos da el valor del input según la tecla pulsada 
+			* <kbd>A</kbd> -> `-1` -> izquierda 
+			* <kbd>D</kbd> -> `1` -> derecha
+			* ninguna -> `0`
+	* `Input.GetAxis("Horizontal")` nos da el valor del input horizontal modificado por los valores de *Sensitivity* y *Gravity* del *InputManager*.
+
+
