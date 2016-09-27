@@ -133,7 +133,7 @@ Distribuido a lo largo de los dos primeros meses: Todos los lunes.
 ### TEMARIO 
 <!-- .element: class="head-right" -->
 
-### Tema 5: Unity UI: Menus y otras interfaces de usuario
+### Tema 6: Unity UI: Menus y otras interfaces de usuario
 
 * Elementos básicos de la interfaz: 
 	* Canvas
@@ -162,7 +162,9 @@ Distribuido a lo largo de los dos primeros meses: Todos los lunes.
 	* En los ejercicios de clase podeis utilizar apuntes en papel y la ayuda de Unity, pero no habrá internet y no se permitirá utilizar ningún archivo electrónico de consulta.
 	* **Quien no apruebe el ejercicio no aprobará la entrega**. Se queda con la nota más baja.
 
-<br>
+
+---
+
 ### Excepción. Ejercicios de matemáticas
 
 * Van ser muchos, más de 50.
