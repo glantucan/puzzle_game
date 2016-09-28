@@ -2,7 +2,8 @@
 #### <!-- .element: class="title" --> DEIM
 ### <!-- .element: class="title" --> Desarrollo de Entornos Interactivos Multidispositivo
 ## <!-- .element: class="title" --> Presentación
-
+<br>
+### <!-- .element: style="text-align:center; margin:0;padding:0" --> [oscar.espeso@live.u-tad.com](mailto:oscar.espeso@live.u-tad.com)
 
 
 ----
