@@ -42,6 +42,8 @@
 
 
 Distribuido a lo largo de los dos primeros meses: Todos los lunes.
+
+
 ---
 
 ### DEIM PRESENTACIÓN
@@ -64,6 +66,7 @@ Distribuido a lo largo de los dos primeros meses: Todos los lunes.
 
 
 ---
+
 
 ### DEIM PRESENTACIÓN
 
