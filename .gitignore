@@ -33,6 +33,10 @@
 **/ehthumbs.db
 **/Thumbs.db
 
-**/*.zip
-**/*.7z
-**/*.rar
+node_modules/
+idea/
+.idea
+
+# **/*.zip
+# **/*.7z
+# **/*.rar
