@@ -329,6 +329,72 @@ Note:
 
 
 
+
+
+---
+
+
+
+
+### Tema 1: Repaso
+<!-- .element: class="head-left" -->
+### 1.4.- Movimiento básico
+<!-- .element: class="head-right" -->
+
+## Uso del Rigidbody 
+
+Para usar las físicas de Unity con un gameobject tenemos que añadirle un componente *Rigidbody*.
+* Con el gameobject seleccionado
+* <!-- .element class="arrow" --> *Inspector* 
+	* <!-- .element class="arrow" --> *Add Component*
+	 	* <!-- .element class="arrow" --> *Physics*
+		 	*  <!-- .element class="arrow" --> *Rigidbody*
+
+En este caso (no es por norma general):
+* Desactivaremos *Use Gravity* 
+* Seleccionaremos *Freeze rotation* para los ejes X y Z  
+  (Para que no se nos "caiga" el personaje al caminar)  
+* Dejamos las demás propiedades del componente sin tocar  
+![](https://www.filepicker.io/api/file/MHESJvuGRT6RDHgfv0cI)
+
+* Hablaremos más en detalle del componente *Rigidbody* más adelante.  
+
+
+---
+
+
+### Tema 1: Repaso
+<!-- .element: class="head-left" -->
+### 1.4.- Movimiento básico
+<!-- .element: class="head-right" -->
+
+## Movimiento con el Rigidbody
+
+* Primero debemos obtener una *referencia* a componente desde nuestro script:
+  ```cs
+Rigidbody rb = this.GetComponent<Rigidbody>();
+``` 
+* `Getcomponent<T>()` es una función heredada de `MonoBehaviour` que sirve para obtener una referencia a un componente de tipo `<T>`.
+* La función busca el componente en el gameobject del objeto desde el que se lanza.<br>
+(en este caso el gameobject de `this` que es el player)
+* Si encuentra un componente de ese tipo devuelve una referencia al mismo que podemos almacenar en una variable para después acceder a sus propiedades.
+* Lo vamos a utilizar para decirle al motor de física con que velocidad ha de moverse el *player* en cada fotograma.
+  ```cs
+	public float speed;
+	private Rigidbody rb;
+	
+	void Start () {
+		this.rb = this.GetComponent<Rigidbody>();
+	}
+	
+	void Update () {
+		Vector3 direction = Vector3.forward;
+		this.rb.velocity = direction * speed;
+	}
+	```
+
+
+
 ----
 
 
@@ -359,4 +425,68 @@ La clase `Input` nos da la info de input de usuario (teclado, ratón, controlado
 			* ninguna -> `0`
 	* `Input.GetAxis("Horizontal")` nos da el valor del input horizontal modificado por los valores de *Sensitivity* y *Gravity* del *InputManager*.
 
+
+---
+
+
+### Tema 1: Repaso
+<!-- .element: class="head-left" -->
+### 1.5.- User Input I
+<!-- .element: class="head-right" -->
+
+## Control Fino del movimiento
+
+* <!-- .element class="no-bullet" --> Configurando las propiedades *Sensitivity* y *Gravity* en *InputManager*:
+* <!-- .element class="arrow" --> *Edit* 
+	* <!-- .element class="arrow" --> *Project Settings*
+	 	* <!-- .element class="arrow" --> *Input*
+
+![](https://www.filepicker.io/api/file/29fIrVi2QgOv8dGTuA8d)
+
+
+**Sensitivity** controla lo rápido que se alcanza el máximo en ese sentido de movimiento. 
+**Gravity** controla cómo de rápido vuelve el valor del eje a 0.  
+
+
+---
+
+
+### Tema 1: Repaso
+<!-- .element: class="head-left" -->
+### 1.5.- User Input I
+<!-- .element: class="head-right" -->
+
+### Versión final del script de movimiento
+```cs
+using UnityEngine;
+using System.Collections;
+
+public class Player : MonoBehaviour {
+
+	// Movement related properties
+	public float speed;
+	private Rigidbody rb;
+
+
+	// Initialization function. Executes just once when the GameObject is created at runtime.
+	void Start () {
+		// Initialize the rigidbody rb property
+		this.rb = this.GetComponent<Rigidbody>();
+	}
+
+	void Update () {
+		// Calculate the movement direction from the Unity input axes.
+		float xInput = Input.GetAxisRaw("Horizontal");
+		float zInput = Input.GetAxisRaw("Vertical");
+		Vector3 direction = zInput * Vector3.forward + xInput * Vector3.right;   
+
+		// Only move the player if there is an input
+		if (direction != Vector3.zero) {
+			// Note that we use the rigidbody to move the player, and only 
+			// when there is input, so we do not interfere with the Physics engine
+			this.rb.velocity = direction.normalized * speed;
+		}
+	}
+}
+```
 
