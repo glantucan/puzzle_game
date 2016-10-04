@@ -4,12 +4,11 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	// Movement related properties
-	[SerializeField] private float moveVel = 10F;
+	public float speed;
 	private Rigidbody rb;
 
-	/// <summary>
-	/// Initialization function. Executes just once when the GameObject is created at runtime.
-	/// </summary>
+
+	// Initialization function. Executes just once when the GameObject is created at runtime.
 	void Start () {
 		// Initialize the rigidbody rb property
 		this.rb = this.GetComponent<Rigidbody>();
@@ -25,7 +24,7 @@ public class Player : MonoBehaviour {
 		if (direction != Vector3.zero) {
 			// Note that we use the rigidbody to move the player, and only 
 			// when there is input, so we do not interfere with the Physics engine
-			this.rb.velocity = direction.normalized * moveVel;
+			this.rb.velocity = direction.normalized * speed;
 		}
 	}
 }
