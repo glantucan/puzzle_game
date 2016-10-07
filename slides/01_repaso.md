@@ -557,11 +557,24 @@ Su gameobject contiene un *rigidbody* con `isKinematic = false`. Se pueden mover
 ### 1.6.- Interruptores. 
 <!-- .element: class="head-right" -->
 
-#### Para funciones evento de colisión: `OnCollisionEnter`, `OnCollisionStay`, `OnCollisionExit`
+<br><br>
+
+### Para funciones evento de colisión: `OnCollisionEnter`, `OnCollisionStay`, `OnCollisionExit`
 
 ![](https://www.filepicker.io/api/file/5qBv1Lc3QfqVlcnM7VlE)
 
-#### Para funciones evento de trigger: `OnTriggerEnter`, `OnTriggerStay`, `OnTriggerExit`
+
+
+---
+
+
+
+### Tema 1: Repaso
+<!-- .element: class="head-left" -->
+### 1.6.- Interruptores. 
+<!-- .element: class="head-right" -->
+
+### Para funciones evento de trigger: `OnTriggerEnter`, `OnTriggerStay`, `OnTriggerExit`
 
 ![](https://www.filepicker.io/api/file/ouZlYdVjQvGkJR5E1f4Q)
 
