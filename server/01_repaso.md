@@ -529,20 +529,40 @@ public class Player : MonoBehaviour {
 
 <br><br>
 
-## Detección de triggers
+## Detección de colisiones y triggers
 
 
 Para detectar con seguridad la entrada y salida en un trigger hay que entender bien las distintas configuraciones posibles de componentes *collider* + *rigidbody*.
 
 Como internamente el responsable de la detección de colisiones o triggers es el componente *collider* se distinguen los siguientes tipos de colliders:
 
-* *Colliders* o *Triggers* **Estáticos**:
+* ***Colliders* o *Triggers* Estáticos**:
 Su gameobject no contiene componente *Rigidbody*. Están en gameobjects que no se van a mover nunca.
-* *Colliders* o *Triggers* **Cinemáticos**:
+* ***Colliders* o *Triggers* Cinemáticos**:
 Su gameobject contiene un *rigidbody* pero con la propiedad `isKinematic` activada (`isKinematic = true`). 
 	* Si se mueven lo hacen a través del componente *transform*, no a través del *rigidbody*.
 	* Utilizan el *rigidbody* sólo para poder detectar colisiones. 
-* *Colliders* o *Triggers* **Dinámicos**:
+* ***Colliders* o *Triggers* Dinámicos**:
 Su gameobject contiene un *rigidbody* con `isKinematic = false`. Se pueden mover pero solo utilizando *"físicas"*.
 	* O en respuesta a una colisión (totalmente controlado por el motor)
 	* O aplicando fuerzas o velocidaddes al *rigidbody* desde un script.
+
+---
+
+
+### Tema 1: Repaso
+<!-- .element: class="head-left" -->
+### 1.6.- Interruptores. 
+<!-- .element: class="head-right" -->
+
+#### Para funciones evento de colisión: 
+`OnCollisionEnter`, `OnCollisionStay`, `OnCollisionExit`
+
+![](https://www.filepicker.io/api/file/5qBv1Lc3QfqVlcnM7VlE)
+
+#### Para funciones evento de trigger: 
+`OnTriggerEnter`, `OnTriggerStay`, `OnTriggerExit`
+
+![](https://www.filepicker.io/api/file/ouZlYdVjQvGkJR5E1f4Q)
+
+Lee [esto para más detalles.](https://github.com/glantucan/puzzle_game/wiki/Detecci%C3%B3n-de-colisiones-y-triggers)
