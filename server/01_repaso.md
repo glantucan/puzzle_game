@@ -447,6 +447,15 @@ La clase `Input` nos da la info de input de usuario (teclado, ratón, controlado
 **Sensitivity** controla lo rápido que se alcanza el máximo en ese sentido de movimiento. 
 **Gravity** controla cómo de rápido vuelve el valor del eje a 0.  
 
+## Configuración del Rigidbody
+
+
+<img align="right" src="https://www.filepicker.io/api/file/MHESJvuGRT6RDHgfv0cI"> Conseguir lo que queremos es más complicado de lo que parece. Así que vamos por partes:
+* Ahora nos ocupamos del control de usuario
+* Más adelante de la gravedad y las caidas
+* Nos olvidamos de los saltos. NO sepuede saltar en este juego.
+
+
 
 ---
 
@@ -480,13 +489,60 @@ public class Player : MonoBehaviour {
 		float zInput = Input.GetAxisRaw("Vertical");
 		Vector3 direction = zInput * Vector3.forward + xInput * Vector3.right;   
 
-		// Only move the player if there is an input
-		if (direction != Vector3.zero) {
-			// Note that we use the rigidbody to move the player, and only 
-			// when there is input, so we do not interfere with the Physics engine
-			this.rb.velocity = direction.normalized * speed;
-		}
+		// Note that we use the rigidbody to move the player, and only 
+		// when there is input, so we do not interfere with the Physics engine
+		this.rb.velocity = direction.normalized * speed;
 	}
 }
 ```
 
+----
+
+
+### Tema 1: Repaso
+<!-- .element: class="head-left" -->
+### 1.6.- Interruptores
+<!-- .element: class="head-right" -->
+
+<br><br>
+
+## Funcionamiento
+* Cada interruptor tiene un componente *collider* configurado como trigger (`isTrigger = true`).
+* El Player debe estar cerca del interruptor.  
+  * Detectamos esta situación con un trigger y `OnTriggerEnter` desde el script `Player`.
+* Si está cerca y se pulsa la tecla ESPACIO:
+  * Si el interruptor esta inactivo SE ACTIVA
+    * -> Se ejecuta la acción asociada a la activación del interruptor.
+  * Si está activo SE DESACTIVA
+    * -> Se revierte la acción asociada a la activación.
+* Detectamos cuando el *player* salga del trigger
+	* Desactivamos la detección de la tecla.
+
+
+---
+
+
+### Tema 1: Repaso
+<!-- .element: class="head-left" -->
+### 1.6.- Interruptores. 
+<!-- .element: class="head-right" -->
+
+<br><br>
+
+## Detección de triggers
+
+
+Para detectar con seguridad la entrada y salida en un trigger hay que entender bien las distintas configuraciones posibles de componentes *collider* + *rigidbody*.
+
+Como internamente el responsable de la detección de colisiones o triggers es el componente *collider* se distinguen los siguientes tipos de colliders:
+
+* *Colliders* o *Triggers* **Estáticos**:
+Su gameobject no contiene componente *Rigidbody*. Están en gameobjects que no se van a mover nunca.
+* *Colliders* o *Triggers* **Cinemáticos**:
+Su gameobject contiene un *rigidbody* pero con la propiedad `isKinematic` activada (`isKinematic = true`). 
+	* Si se mueven lo hacen a través del componente *transform*, no a través del *rigidbody*.
+	* Utilizan el *rigidbody* sólo para poder detectar colisiones. 
+* *Colliders* o *Triggers* **Dinámicos**:
+Su gameobject contiene un *rigidbody* con `isKinematic = false`. Se pueden mover pero solo utilizando *"físicas"*.
+	* O en respuesta a una colisión (totalmente controlado por el motor)
+	* O aplicando fuerzas o velocidaddes al *rigidbody* desde un script.

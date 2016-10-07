@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>(Server) T0: REPASO</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,600,700|Ubuntu+Mono:400,700|Vesper+Libre:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
+
+    <link rel="stylesheet" href="css/my_styles.css">
+    <link rel="stylesheet" href="css/my_styles_lists.css">
+    <link rel="stylesheet" href="css/my_styles_code.css">
+    <link rel="stylesheet" href="css/my_styles_2columns.css">
+    <link rel="stylesheet" href="css/my_styles_sfx.css">
+    <link rel="stylesheet" href="css/my_styles_speaker.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section data-markdown="01_repaso.md"
+                 data-separator="^\r?\n----\r?\n"
+                 data-separator-vertical="^\r?\n---\r?\n"
+                 data-separator-notes="^Note:" ></section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        center:false,
+        history: true,
+        margin: 0,
+        transition: 'concave', // none/fade/slide/convex/concave/zoom
+        minScale: 0.5,
+        showNotes: true,
+
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            { src: 'plugin/markdown/marked.js' },
+            { src: 'plugin/markdown/markdown.js' },
+            { src: 'plugin/notes/notes.js', async: true },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            // MathJax
+            { src: 'plugin/math/math.js', async: true },
+            // Zoom in and out with Alt+click
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+
+
+
+            { src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
+            { src: 'plugin/multiplex/master.js', async: true },
+
+            // and if you want speaker notes
+            { src: 'plugin/notes-server/client.js', async: true }
+        ]
+    });
+</script>
+
+
+</body>
+</html>
