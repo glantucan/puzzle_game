@@ -506,7 +506,7 @@ public class Player : MonoBehaviour {
 
 <br><br>
 
-## Funcionamiento
+## Funcionamiento de los interruptores
 * Cada interruptor tiene un componente *collider* configurado como trigger (`isTrigger = true`).
 * El Player debe estar cerca del interruptor.  
   * Detectamos esta situación con un trigger y `OnTriggerEnter` desde el script `Player`.
@@ -527,7 +527,7 @@ public class Player : MonoBehaviour {
 ### 1.6.- Interruptores. 
 
 
-<br><br>
+
 
 ## Detección de colisiones y triggers
 
@@ -547,6 +547,8 @@ Su gameobject contiene un *rigidbody* con `isKinematic = false`. Se pueden mover
 	* O en respuesta a una colisión (totalmente controlado por el motor)
 	* O aplicando fuerzas o velocidaddes al *rigidbody* desde un script.
 
+
+
 ---
 
 
@@ -555,13 +557,11 @@ Su gameobject contiene un *rigidbody* con `isKinematic = false`. Se pueden mover
 ### 1.6.- Interruptores. 
 
 
-#### Para funciones evento de colisión: 
-`OnCollisionEnter`, `OnCollisionStay`, `OnCollisionExit`
+### Para funciones evento de colisión: `OnCollisionEnter`, `OnCollisionStay`, `OnCollisionExit`
 
 ![](https://www.filepicker.io/api/file/5qBv1Lc3QfqVlcnM7VlE)
 
-#### Para funciones evento de trigger: 
-`OnTriggerEnter`, `OnTriggerStay`, `OnTriggerExit`
+### Para funciones evento de trigger: `OnTriggerEnter`, `OnTriggerStay`, `OnTriggerExit`
 
 ![](https://www.filepicker.io/api/file/ouZlYdVjQvGkJR5E1f4Q)
 
