@@ -11,7 +11,7 @@
 
 </head>
 <body>
-</body>
+<div id="content">
     <h1>Desarrollo de Entornos Interactivos Multimedia (2016)</h1>
 
     <ul>
@@ -35,4 +35,13 @@
             </ul>
         </li>
     </ul>
+</div>
+
+	<script src="js/marked.js"></script>
+	<script>
+		document.getElementById('content').innerHTML =
+		marked('# Marked in browser\n\nRendered by **marked**.');
+	</script>
+
+</body>
 </html>
