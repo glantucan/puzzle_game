@@ -40,7 +40,7 @@
 	<script src="js/marked.js"></script>
 	<script>
 		document.getElementById('content').innerHTML =
-		marked('# Marked in browser\n\nRendered by **marked**.');
+		marked(document.getElementById('content').innerHTML);
 	</script>
 
 </body>
