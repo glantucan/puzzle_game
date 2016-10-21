@@ -13,7 +13,7 @@
 <body>
 <div id="content">
 # Desarrollo de Entornos Interactivos Multimedia (2016)
-
+<br>
 ## [Glosario de programación](https://github.com/glantucan/puzzle_game/wiki/Glosario-de-programacion)
 <br>
 * [Transparencias Presentación DEIM](./client/t00_presentacion_client.html) <br>
@@ -41,7 +41,7 @@
 	[Grupo A](https://github.com/glantucan/deim_A/archive/865ef80ca4717b77fb91c07f226f0039515dcb56.zip) (Oct 17, 2016) 
 	Encender las luces de activación del botón. Introducción a la definición de funciones propias.  
 	[Grupo B](https://github.com/glantucan/DEIM_B/archive/e29cb0d4ef545a056375e1915a5b2f346cd574d8.zip) (Oct 14, 2016)) 
-	Encender las luces de activación del botón. Creación de animaciones simples. (También incluye corrección del examen)  
+	Encender las luces de activación del botón. Creación de animaciones simples. ~~(También incluye corrección del examen)~~. No es verdad. Coged la versión del grupo A (Debí de pisar la versión que contenía la corrección en alguno de los múltiples cambios de clase).  
 	[Grupo B](https://github.com/glantucan/DEIM_B/archive/73de5c6845893f8b2a4797b7748912727b1a84a3.zip) (Oct 17, 2016)  
 	Lanzamiento de animaciones desde el código.  
 	
@@ -49,8 +49,16 @@
 	Conceptos de encapsulado y abstracción. Definición de funciones de diferentes tipos.
 	<br/>
 	
-	* ** Versión 7** ([Grupo A](https://github.com/glantucan/deim_A/archive/a80ce66577b8d93e69bf9face3a2e1a2447afe61.zip) (Oct 19, 2016) || ) <br/>
+	* ** Versión 7** ([Grupo A](https://github.com/glantucan/deim_A/archive/a80ce66577b8d93e69bf9face3a2e1a2447afe61.zip) (Oct 19, 2016)) <br/>
 	Realización de la acción correspondiente a un botón (levantar una rampa), antes de encapsular y abstraer en funciones.
+	
+	* ** Versión 8** ([Grupo A](https://github.com/glantucan/deim_A/archive/8361db22638f5ff5c9567c802ccbafddb33cdd9e.zip) (Oct 20, 2016) || [Grupo B](https://github.com/glantucan/DEIM_B/archive/f6a7ca37425caa62f913d2fde342e371e91f1d20.zip) (Oct 20, 2016))
+	Versión definitiva del código para los botones, encapsulada y abstraída en varias funciones.  
+	Las versiones de cada grupo han quedado ligeramente diferentes, echadles un vistazo a ambas para ver dos de los posibles enfoques:
+	  * La del grupo A no realiza comprobaciones innecesarias y esconde el truco para deducir el nombre del target de la acción en otra función.
+	  * La del B es más abstracta. Por ejemplo: `SetChildActive()` es más reutilizable que las funciones del grupo A. Sin embargo se están realizando comprobaciones que no son necesarias. 
+	**RETO para nota:** Escribir una versión del código que tome lo mejor de ambos enfoques.
+	
 
   Lecturas complementarias:<br>
 	<ul>
