@@ -15,9 +15,11 @@ public class Player : MonoBehaviour {
 	// Movement related properties
 	private Rigidbody rb;
 	[SerializeField] private float moveVel = 2F;
+	[SerializeField] private float jumpVel = 2F;
 	private float drag;
 	[SerializeField] private List<Collider> groundContacts;
 	private bool isGrounded = true; // This is necessary to find out when it should fall
+	private bool isJumping = false;
 
 	// Inventory properties
 	[SerializeField] private GameObject[] inventory; // Inventory array
@@ -82,30 +84,49 @@ public class Player : MonoBehaviour {
 		// MOVEMENT:
 		// -------------------------------------------------------------------------------------------------------------
 		// -> See OnCollisionEnter and OnCollisionExit for the isGrounded flag
+
+		// Calculate the movement direction from the Unity input axes. We use GetAxisRaw cause we want the Physics 
+			// engine to do the movement smoothing, not the Input Unity system
+		float hInput = Input.GetAxisRaw("Horizontal");
+		float vInput = Input.GetAxisRaw("Vertical");
+
+		Vector3 rawDisplacement; 
+		if (cameraAngles[this.rotatedControls] == 0) {
+			rawDisplacement = new Vector3(hInput, 0, vInput);
+		} else if (cameraAngles[this.rotatedControls] == 90) {
+			rawDisplacement = new Vector3(-vInput, 0, hInput);
+		} else if (cameraAngles[this.rotatedControls] == 180) {
+			rawDisplacement = new Vector3(-hInput, 0, -vInput);
+		} else { // rotatedControls == 270
+			rawDisplacement = new Vector3(vInput, 0, -hInput);
+		}
+
 		if (this.isGrounded) {
 			// Set the drag so it simulates floor friction.
 			this.rb.drag = drag;
-			// Calculate the movement direction from the Unity input axes. We use GetAxisRaw cause we want the Physics 
-			// engine to do the movement smoothing, not the Input Unity system
-			float hInput = Input.GetAxisRaw("Horizontal");
-			float vInput = Input.GetAxisRaw("Vertical");
-			Vector3 rawDisplacement;
-			if (cameraAngles[this.rotatedControls] == 0) {
-				rawDisplacement = new Vector3(hInput, 0, vInput);
-			} else if (cameraAngles[this.rotatedControls] == 90) {
-				rawDisplacement = new Vector3(-vInput, 0, hInput);
-			} else if (cameraAngles[this.rotatedControls] == 180) {
-				rawDisplacement = new Vector3(-hInput, 0, -vInput);
-			} else { // rotatedControls == 270
-				rawDisplacement = new Vector3(vInput, 0, -hInput);
-			}
+			this.isJumping = Input.GetKey(KeyCode.Space);
 	        // Only move the player if there is an input
 			if (rawDisplacement != Vector3.zero) {
 				// Note we use the rigidbody to move the player, and only when there is input so we do not interfere with 
 				// the Physics engine
 				this.rb.velocity = rawDisplacement * this.moveVel;
 	        } 
+	        if (isJumping) {
+	        	isJumping = false;
+	        	rb.velocity = Vector3.up * this.jumpVel;
+	        }
 		} else {
+			if (rawDisplacement != Vector3.zero) {
+				this.rb.velocity = 
+					rawDisplacement.x * Vector3.right * this.moveVel + 
+					this.rb.velocity.y * Vector3.up +
+					rawDisplacement.z *Vector3.forward * this.moveVel;
+			} else {
+				this.rb.velocity = 
+					this.rb.velocity.x * Vector3.right * 0.98F + 
+					this.rb.velocity.y * Vector3.up +
+					this.rb.velocity.z *Vector3.forward * 0.98F;
+			}
 			// Player is falling -> no friction.
 //			this.rb.velocity *= 0.5F; 
 //			this.rb.drag = 0;
@@ -174,7 +195,7 @@ public class Player : MonoBehaviour {
 		// SWITCH BUTTONS
 		// -> See OnTriggerEnter and OnTriggerExit for the isNearSwitch flag
 		if (isNearSwitch) {
-			if (Input.GetKeyUp(KeyCode.Space)) {
+			if (Input.GetKeyUp(KeyCode.E)) {
 				Transform buttonLight = nearestButton.transform.FindChild("ButtonLight");
 				Transform glimmerLight = nearestButton.transform.FindChild("GlimmerLight");
 				buttonLight.gameObject.SetActive(!buttonLight.gameObject.activeSelf);
@@ -234,7 +255,7 @@ public class Player : MonoBehaviour {
 		cameraTr.LookAt(this.tr);
 		Vector3 wantedCamPosition = this.tr.position + this.camDistanceVec;
 		// Iterpolate the camera postion between the current value and the wanted value
-		this.cameraTr.position = Vector3.Lerp(this.cameraTr.position, wantedCamPosition, 0.1F);
+		this.cameraTr.position = Vector3.Lerp(this.cameraTr.position, wantedCamPosition, 0.05F);
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -282,7 +303,7 @@ public class Player : MonoBehaviour {
 			if (groundContacts.Count == 0) {
 				isGrounded = false;
 
-				this.rb.velocity *= 0.4F; 
+				//this.rb.velocity *= 0.4F; 
 				this.rb.drag = 0;
 				//print("Should fall");
 			}
