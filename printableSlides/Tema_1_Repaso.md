@@ -41,7 +41,7 @@ Podéis descargar el proyecto inicial [aquí](https://github.com/glantucan/puzzl
   * Descarga [este archivo](https://drive.google.com/open?id=0B97mmF9E10p3SUVCQm9yXy03YXM).
   * Descomprímelo en una carpeta temporal.
   * Copia las carpetas que hay dentro a  
-  `c:\\Users\your_user_name\AppData\Roaming\MonoDevelop-Unity-5.0`.  
+  `c:\Users\your_user_name\AppData\Roaming\MonoDevelop-Unity-5.0`.  
 Borra lo que haya dentro de esa carpeta previamente.
 
 
